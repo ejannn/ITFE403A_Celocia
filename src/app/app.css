@@ -1,0 +1,26 @@
+body {
+  background-color: #e3f2fd;
+}
+
+.card {
+  width: 500px;
+  margin: 60px auto;
+  text-align: center;
+  padding: 30px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 0 15px gray;
+}
+
+h1 {
+  color: darkblue;
+  font-size: 40px;
+}
+
+h2 {
+  color: green;
+}
+
+h3 {
+  color: purple;
+}   
