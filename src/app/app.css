@@ -1,26 +1,23 @@
 body {
+
+  
+  margin: 0;
   background-color: #e3f2fd;
 }
 
-.card {
-  width: 500px;
-  margin: 60px auto;
-  text-align: center;
-  padding: 30px;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 0 15px gray;
+:host{
+    display:block;
+    min-height:100vh;
+    padding-top:70px;
+    background:
+    radial-gradient(circle at left,#12212d,#0d1117 40%),
+    radial-gradient(circle at right,#401b20,#0d1117 45%);
+
+    background-color:#0d1117;
 }
 
-h1 {
-  color: darkblue;
-  font-size: 40px;
-}
 
-h2 {
-  color: green;
-}
 
-h3 {
-  color: purple;
-}   
+
+
+ 
