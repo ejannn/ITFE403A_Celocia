@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
 })
 export class ProfileCard {
 
-StudentFirstName: string = 'Niel Jhon';
-StudentMiddleName: string = 'Evardo';
-StudentLastName: string = 'Celocia';
+FirstName: string = 'Niel Jhon';
+MiddleName: string = 'Evardo';
+LastName: string = 'Celocia';
 StudentNumber: string = '2023-00000';
 Course: string = 'BSIT';
 YearLevel: string = '4th Year';

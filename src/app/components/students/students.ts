@@ -1,0 +1,18 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'app-students',
+  imports: [CommonModule],
+  templateUrl: './students.html',
+  styleUrl: './students.css',
+})
+export class Students {
+
+  students: { firstName: string; middleName: string; lastName: string; Course: string; YearLevel: string; isActive: boolean }[] = [
+    { firstName: 'Juan', middleName: 'Dela', lastName: 'Cruz',  Course: 'BSIT', YearLevel: '2nd Year', isActive: false },
+    { firstName: 'Maria', middleName: 'Santos', lastName: 'Reyes',  Course: 'BSCS', YearLevel: '3rd Year', isActive: false },
+    { firstName: 'Pedro', middleName: 'Gonzales', lastName: 'Lopez',  Course: 'BSIT', YearLevel: '1st Year', isActive: false },
+    { firstName: 'Niel', middleName: 'Jhon', lastName: 'Celocia',  Course: 'BSIT', YearLevel: '4th Year', isActive: true },
+  ]
+}
