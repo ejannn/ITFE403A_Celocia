@@ -31,6 +31,27 @@
 
 }
 
+.announcement-card button{
+    padding: 8px 14px;
+    border: 1px solid rgb(234, 231, 231);
+    display: table-column;
+    margin: 15px;
+    border-radius: 5px;
+    border-color: aliceblue;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: white;
+}
+
+.announcement-card .pin-btn:hover {
+    background-color: #f0c419;
+}
+
+.announcement-card .delete-btn:hover {
+    background-color: #ff1f35;
+}
+
 .announcement-card p{
 
     font-size:16px;
@@ -42,6 +63,7 @@
     color:white;
 
 }
+
 
 .announcement-card span{
 
@@ -74,4 +96,14 @@
         font-weight: semi-bold;
         transition: all .3s ease;
     }
+}
+
+.pin-btn {
+    background-color: transparent;
+    border-color: #f0c419;
+}
+
+.pin-btn.pinned {
+    background-color: #f0c419;
+    color: white;
 }

@@ -1,14 +1,31 @@
-
-
 <div
   class="announcement-card"
-  *ngFor="let announcement of announcements"
+  *ngFor="let announcement of announcements; let i = index"
   [class.active]="announcement.isActive"
 >
- 
   <h3>{{ announcement.title }}</h3>
+
   <p>{{ announcement.body }}</p>
+
   <span class="author">by: {{ announcement.author }}</span>
   <span class="date">{{ announcement.date }}</span>
-  
-</div>  
+
+  <div class="announcement-actions">
+
+    <button
+      class="pin-btn"
+      [class.pinned]="announcement.isPinned"
+      (click)="togglePin(announcement)"
+    >
+      {{ announcement.isPinned ? '★ Pinned' : 'Pin' }}
+    </button>
+
+    <button
+      class="delete-btn"
+      (click)="deleteAnnouncement(i)"
+    >
+      Delete
+    </button>
+
+  </div>
+</div>
