@@ -1,27 +1,127 @@
- <div class="student-card"
-  *ngFor="let student of students; let i = index"
-  [class.active]="student.isActive"
->
-    <h3>{{ i + 1 }}. {{ student.firstName }} 
-        {{ student.middleName }} 
-        {{ student.lastName }}</h3>
-    <p>{{ student.Course }}</p>
-    <p class="year-level">Year: {{ student.YearLevel }}</p>
 
-    <div class="student-actions">
-        <button class="favorite-btn"
-        [class.favorited]="student.isFavorited"
-        (click)="student.isFavorited = !student.isFavorited"
-        >{{ student.isFavorited ? '★ Favorited' : 'Favorite' }}</button>
+<div *ngIf="isLoading" class="loading-screen">
 
+    <div class="loading-header">
+        <div class="spinner"></div>
+        <p>Loading students...</p>
+    </div>
 
-        <button class="edit-btn"(click)="editStudent(student)">Edit</button>
-        <button class="delete-btn"
-        (click)="deleteStudent(i)">Delete</button>
-    </div> 
+  
+    <div class="skeleton-container">
 
-    
+        <div class="student-card skeleton-card">
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-course"></div>
+            <div class="skeleton skeleton-year"></div>
+            <div class="skeleton skeleton-status"></div>
+
+            <div class="skeleton-actions">
+                <div class="skeleton skeleton-button"></div>
+                <div class="skeleton skeleton-button"></div>
+                <div class="skeleton skeleton-button"></div>
+            </div>
+        </div>
+
+        <div class="student-card skeleton-card">
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-course"></div>
+            <div class="skeleton skeleton-year"></div>
+            <div class="skeleton skeleton-status"></div>
+
+            <div class="skeleton-actions">
+                <div class="skeleton skeleton-button"></div>
+                <div class="skeleton skeleton-button"></div>
+                <div class="skeleton skeleton-button"></div>
+            </div>
+        </div>
+
+        <div class="student-card skeleton-card">
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-course"></div>
+            <div class="skeleton skeleton-year"></div>
+            <div class="skeleton skeleton-status"></div>
+
+            <div class="skeleton-actions">
+                <div class="skeleton skeleton-button"></div>
+                <div class="skeleton skeleton-button"></div>
+                <div class="skeleton skeleton-button"></div>
+            </div>
+        </div>
+
+    </div>
 
 </div>
-    
-    
+
+
+<ng-container *ngIf="!isLoading">
+
+    <div
+        class="student-card"
+        *ngFor="let student of students; let i = index"
+        [class.active]="student.isActive"
+    >
+
+        <h3>
+            {{ i + 1 }}. {{ student.firstName }}
+            {{ student.middleName }}
+            {{ student.lastName }}
+        </h3>
+
+        <p>{{ student.Course }}</p>
+
+        <p class="year-level">
+            Year: {{ student.YearLevel }}
+        </p>
+
+
+        <div
+            *ngIf="student.isActive; else inactiveStatus"
+            class="student-status active"
+        >
+            <span class="status-dot"></span>
+            Active
+        </div>
+
+        <ng-template #inactiveStatus>
+            <div class="student-status inactive">
+                <span class="status-dot"></span>
+                Inactive
+            </div>
+        </ng-template>
+
+  
+        <div class="student-actions">
+
+            <button
+                class="favorite-btn"
+                [class.favorited]="student.isFavorited"
+                (click)="student.isFavorited = !student.isFavorited"
+            >
+                {{ student.isFavorited ? '★ Favorited' : 'Favorite' }}
+            </button>
+
+            <button
+                *ngIf="student.isActive"
+                class="edit-btn"
+                (click)="editStudent(student)"
+            >
+                Edit
+            </button>
+
+            <button
+                class="delete-btn"
+                (click)="deleteStudent(i)"
+            >
+                Delete
+            </button>
+
+        </div>
+
+    </div>
+
+    <div *ngIf="students.length === 0" class="empty-state">
+        <h3>No students found.</h3>
+        <p>Add your first student.</p>
+    </div>
+
+</ng-container>
