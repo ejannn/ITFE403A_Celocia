@@ -1,0 +1,52 @@
+.student-detail-page {
+    min-height: 100vh;
+    padding: 40px;
+    background-color: #070b14;
+}
+
+.detail-card {
+    width: 500px;
+    margin: 0 auto;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #0B1120;
+    border: 1px solid #273449;
+}
+
+.detail-card h1 {
+    color: white;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.student-info {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #273449;
+}
+
+.label {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.value {
+    color: white;
+    font-weight: 600;
+}
+
+.status {
+    font-weight: 600;
+}
+
+.status.active {
+    color: #22c55e;
+}

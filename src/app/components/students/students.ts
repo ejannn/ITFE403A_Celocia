@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-students',
-  imports: [CommonModule],
+  standalone: true,
+  imports: [CommonModule, RouterLink],
   templateUrl: './students.html',
   styleUrl: './students.css',
 })
@@ -11,15 +13,7 @@ export class Students {
 
   isLoading = true;
 
-  students: {
-    firstName: string;
-    middleName: string;
-    lastName: string;
-    Course: string;
-    YearLevel: string;
-    isActive: boolean;
-    isFavorited: boolean;
-  }[] = [
+  students = [
     {
       firstName: 'Juan',
       middleName: 'Dela',
@@ -58,22 +52,13 @@ export class Students {
     }
   ];
 
-  constructor() {
-    setTimeout(() => {
-      this.isLoading = false;
-    }, 2000);
-  }
+  
 
   deleteStudent(index: number): void {
     this.students.splice(index, 1);
-    console.log(`Student at position ${index + 1} has been deleted.`);
   }
 
   editStudent(student: any): void {
-    console.log(
-      `Editing ${student.firstName} ${student.middleName} ${student.lastName}`
-    );
-
     alert(
       `Editing ${student.firstName} ${student.middleName} ${student.lastName}`
     );

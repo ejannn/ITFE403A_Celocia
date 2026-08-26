@@ -1,18 +1,17 @@
 <app-header></app-header>
 
-<div class="container">
-  <app-profile-card></app-profile-card>
+<nav class="navbar">
 
+    <a routerLink="/students">
+        Student List
+    </a>
 
+    <a routerLink="/students/add">
+        Add Student
+    </a>
 
-  <div class="announcements">
-    
-    <app-announcement-card></app-announcement-card>
-  </div>
-  <div class="students">
-    <app-students></app-students>
-  </div>
- 
-</div>
+</nav>
+
+<router-outlet></router-outlet>
 
 <app-footer></app-footer>

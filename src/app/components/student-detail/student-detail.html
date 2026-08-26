@@ -1,0 +1,56 @@
+<div class="student-detail-page">
+
+    <div class="detail-card">
+
+        <h1>Student Details</h1>
+
+        <div class="student-info">
+
+            <div class="info-item">
+                <span class="label">Student Name</span>
+                <span class="value">{{ student.name }}</span>
+            </div>
+
+            <div class="info-item">
+                <span class="label">Student ID</span>
+                <span class="value">{{ student.studentId }}</span>
+            </div>
+
+            <div class="info-item">
+                <span class="label">Course</span>
+                <span class="value">{{ student.course }}</span>
+            </div>
+
+            <div class="info-item">
+                <span class="label">Year Level</span>
+                <span class="value">{{ student.yearLevel }}</span>
+            </div>
+
+            <div class="info-item">
+                <span class="label">Status</span>
+                <span class="status active">
+                    ● {{ student.status }}
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="student-detail">
+
+    <h2>Student Detail</h2>
+
+    <h3>{{ student.name }}</h3>
+
+    <p>Student ID: {{ student.studentId }}</p>
+    <p>Course: {{ student.course }}</p>
+    <p>Year Level: {{ student.yearLevel }}</p>
+    <p>Status: {{ student.status }}</p>
+
+    <a routerLink="/students">
+        ← Back to Student List
+    </a>
+
+</div>
+
+</div>
