@@ -1,36 +1,29 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  imports: [],
+  imports: [CommonModule],
   selector: 'app-products',
   styleUrl: './products.css',
   templateUrl: './products.html',
 })
 export class Products {
   
-  product1: string = 'Product 1';
-  product1Description: string = 'This is a description of the product.';
-  product1Price: number = 19.99;
-  product1Sales: number = 100;
+  products: {name: string, description: string, price: number, sales: string}[] = [
 
-  product2: string = 'Product 2';
-  product2Description: string = 'This is a description of Product 2.';
-  product2Price: number = 29.99;
-  product2Sales: number = 50;
+      {name: 'ILU New Style Milan Korean One Strap...', description: 'Sulit Deal', price: 1, sales: "10K+ sold"},
+      {name: 'Classic high Cut Canvas Shoes for Women and Me..', description: 'Sulit Dead-l', price: 19.99, sales: "200"},
+      {name: 'Product 3', description: 'Description of Product 3', price: 5.99, sales: "50"},
+      {name: 'Product 4', description: 'Description of Product 4', price: 15.99, sales: "150"},
+      {name: 'Product 5', description: 'Description of Product 5', price: 25.99, sales: "300"}
 
-  product3: string = 'Product 3';
-  product3Description: string = 'This is a description of Product 3.';
-  product3Price: number = 9.99;
-  product3Sales: number = 200;
 
-  product4: string = 'Product 4';
-  product4Description: string = 'This is a description of Product 4.';
-  product4Price: number = 39.99;
-  product4Sales: number = 75;
+  ]
 
-  product5: string = 'Product 5';
-  product5Description: string = 'This is a description of Product 5.';
-  product5Price: number = 14.99;
-  product5Sales: number = 150;
+  constructor() {
+     
 
+    }
 }
+  
+
